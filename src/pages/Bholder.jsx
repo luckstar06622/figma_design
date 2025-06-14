@@ -1,0 +1,111 @@
+import { Box, Button, Grid, Typography, Stack,  Chip } from '@mui/material';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import card11 from '../assets/btrace/card11.svg';
+import card22 from '../assets/btrace/card22.svg';
+import logo from '../assets/product/logo.svg';
+import { bholderstyle } from './components';
+import cardmark from '../assets/about/cardmark.svg';
+import movie from '../assets/bholder/movie.svg'
+
+
+export default function Bholder() {
+  const cardData = [
+    {
+      title: 'Graph-Based Address Visualization',
+      content: 'Visualize addresses as graphical elements and connections between them'
+    },
+    {
+      title: 'Follow the Flow of Blockchain Funds',
+      content: 'Trace the path of funds from the address under investigation to their current location'
+    },
+    {
+      title: 'Identify Probable Wallet Owners',
+      content: 'Obtain information on likely owners based on address markup'
+    },
+    {
+      title: 'Detect the Source of Crypto Assets',
+      content: 'Establish the sources of origin of funds on the cryptocurrency address'
+    },
+    {
+      title: 'Group Data for Better Insight',
+      content: 'Simplify the perception of a large number of transactions and addresses through grouping'
+    },
+  ];
+  return (
+    <Stack color='white' alignItems="center" sx={{ width: '100%' }}>
+      <Stack alignItems="center" alignContent="center">
+        <Chip label="Btrace" sx={{ bgcolor: '#23222a', color: '#bdbdbd', p: '18px', fontSize: '16px', mb: 2 }} />
+      </Stack>
+      <Box sx={{ pt: 2, pb: 4 }}>
+        <Stack alignItems="center">
+          <Typography variant="h4" fontWeight="bold" align="center" sx={{ mb: '22px' }}>
+            Visualizing Interactions Between<br /> <Box component="span" color="#767676">Blockchain</Box> Addresses
+          </Typography>
+          <Typography variant="body1" color="#bdbdbd" sx={{ mb: '22px' }}>
+            A tool that visualizes the interactions between blockchain addresses
+          </Typography>
+          <Stack direction="row" sx={{ mb: '84px' }}>
+            <Button sx={{ backgroundColor: "white", color: 'black', borderRadius: '30px', px: 4, py: 2, bgcolor: 'white', fontWeight: 600, textTransform: 'none' }}>
+              Get consultation
+            </Button>
+            <Button color="white" sx={{ textTransform: 'none', ml: '30px' }} endIcon={<ArrowForwardIosIcon />}>About Us</Button>
+          </Stack>
+          <Stack>
+          </Stack>
+        </Stack>
+      </Box>
+      <Grid container spacing={0} justifyContent="center">
+        {cardData.map((item, index) => (
+          <Grid key={index} size={4} md={4}>
+            <Box sx={bholderstyle}>
+              <img src={cardmark} alt="icon" style={{ width: 62, marginBottom: 85 }} />
+              <Typography variant="h5" fontWeight="bold" gutterBottom>{item.title}</Typography>
+              <Typography color="#bdbdbd">
+                {item.content}
+              </Typography>
+            </Box>
+          </Grid>
+        ))}
+      </Grid>
+      <Box maxWidth="lg" sx={{ mb: 8 }}>
+        <Grid container spacing={3} alignItems="center">
+          <Grid item size={6} md={6}>
+            <Box component="img" src={card11} alt="Check Blockchain Address" sx={{ width: '100%' }} />
+          </Grid>
+          <Grid item size={6} md={6}>
+            <Chip label="Blockchain Address" sx={{ bgcolor: '#23222a', color: '#bdbdbd', p: '17px', fontSize: '14px', mb: "20px" }} />
+            <Typography variant="h4" fontWeight={700} mb={2}>Provide data visually</Typography>
+            <Typography variant="body1" mb={4}>
+              To simplify the perception in the graph of links between addresses, you can see the amount of sent tokens.
+              If necessary, you can get details of which transactions it consists of
+            </Typography>
+            <Button variant="contained" endIcon={<ArrowForwardIosIcon />} sx={{ borderRadius: 8, px: 4, py: 2, bgcolor: 'white', color: 'black' }}>Read more</Button>
+          </Grid>
+        </Grid>
+        <Grid container spacing={3} alignItems="center">
+          <Grid item size={6} md={6}>
+            <Chip label="Blockchain Address" sx={{ bgcolor: '#23222a', color: '#bdbdbd', p: '17px', fontSize: '14px', mb: "20px" }} />
+            <Typography variant="h4" fontWeight={700} mb={2}>We successfully work with different types of tokens</Typography>
+            <Typography variant="body1" mb={4}>
+              The amount of interaction between addresses is displayed in a token or a selected unit of measure, for example USDT.
+            </Typography>
+            <Button variant="contained" endIcon={<ArrowForwardIosIcon />} sx={{ borderRadius: 8, px: 4, py: 2, bgcolor: 'white', color: 'white', background: 'linear-gradient(308.69deg, #FF8629 63.74%, #FFD729 92.78%)' }}>Read more</Button>
+          </Grid>
+          <Grid item size={6} md={6}>
+            <Box component="img" src={card22} alt="Check Blockchain Address" sx={{ width: '100%' }} />
+          </Grid>
+        </Grid>
+      </Box>
+      <Stack alignItems="center" spacing={2} sx={{mb:'47px'}}>
+        <Box component="img" src={logo} alt="Chainsecurity" sx={{ mb: 2, maxWidth: '198px' }} />
+        <Typography variant="h4" fontWeight="bold" align="center">Demonstration <br /> of<Box component="span" color="#767676"> Bholder’s </Box>work</Typography>
+        <Typography align="center" color="#bdbdbd" sx={{ maxWidth: 700 }}>
+          Enjoy a more private and secure internet, block malicious websites, stop web trackers, and monitor your data leaks all in one app.
+        </Typography>
+      </Stack>
+      <Box>
+      <Box component="img" src={movie} alt="Chainsecurity" sx={{ mb: '73px' }} />
+      </Box>
+    </Stack>
+  );
+} 
