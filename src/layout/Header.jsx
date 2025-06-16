@@ -3,6 +3,7 @@ import { AppBar, Toolbar, Typography, Container, Box, Button, CssBaseline, Stack
 import logo from '../assets/logo.svg';
 import Telegram from '../assets/telegram.svg';
 import Close from '../assets/close.svg';
+import menu from '../assets/menu.svg';
 
 
 export default function Header() {
@@ -10,10 +11,11 @@ export default function Header() {
   return (
     <AppBar position="static" sx={{ backgroundColor: 'transparent', boxShadow: 'none', }}   >
       {/* <Toolbar> */}
-      <Stack direction="row" justifyContent="space-between" alignItems="center" sx={{ width: '100%', padding: '70px' }}>
+      <Stack direction="row" justifyContent="space-between" alignItems="center" sx={{ width: '100%', padding: {lg: '70px',md: '70px',xs:'20px'} }}>
 
-        <Stack direction="row" alignItems="center" spacing={2} component={Link} to="/Bholder">
-          <img style={{maxWidth:'198px', cursor:'pointer'}} src={logo} alt="Chainsecurity.io" />
+          <Box component="img" src={menu} alt="menu" sx={{  cursor: 'pointer', display: { xs: 'block', md: 'none' } }} />
+        <Stack direction="row" alignItems="center" spacing={2}>
+          <Box component="img" src={logo} alt="icon" sx={{ width:{lg: '198px',md: '198px',xs:'138px'}, cursor: 'pointer' }} />
         </Stack>
 
         <Stack direction="row" alignItems="center" display={{ xs: 'none', md: 'flex' }} spacing={2}>
@@ -33,10 +35,10 @@ export default function Header() {
         </Stack>
 
         <Stack direction="row" alignItems="center" spacing={2}>
-          <Stack component={Link} to="/Btrace" alignItems="center" justifyContent="center" sx={{ cursor: 'pointer', background: "white", padding: "10px", borderRadius: "50%" }}>
+          <Stack component={Link} to="/Btrace" alignItems="center" justifyContent="center" sx={{width:{lg: '46px',md: '46px',xs:'32px'},height:{lg: '46px',md: '46px',xs:'32px'}, cursor: 'pointer', background: "white", padding: "10px", borderRadius: "50%" }}>
             <img src={Telegram} alt="Telegram" />
           </Stack>
-          <Stack component={Link} to="/Api" alignItems="center" justifyContent="center" sx={{ cursor: 'pointer', background: "rgba(46, 46, 46, 1)", padding: "10px", borderRadius: "50%" }}>
+          <Stack component={Link} to="/Api" alignItems="center" justifyContent="center" sx={{width:{lg: '46px',md: '46px',xs:'32px'},height:{lg: '46px',md: '46px',xs:'32px'}, cursor: 'pointer', background: "rgba(46, 46, 46, 1)", padding: "10px", borderRadius: "50%" }}>
             <img src={Close} alt="Close" />
           </Stack>
         </Stack>

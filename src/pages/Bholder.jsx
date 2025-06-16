@@ -1,9 +1,9 @@
-import { Box, Button, Grid, Typography, Stack,  Chip } from '@mui/material';
+import { Box, Button, Grid, Typography, Stack, Chip } from '@mui/material';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import card11 from '../assets/btrace/card11.svg';
 import card22 from '../assets/btrace/card22.svg';
 import logo from '../assets/product/logo.svg';
-import { bholderstyle } from './components';
+import { bholderstyle, globalstyle, globalData } from './components';
 import cardmark from '../assets/about/cardmark.svg';
 import movie from '../assets/bholder/movie.svg'
 
@@ -38,7 +38,7 @@ export default function Bholder() {
       </Stack>
       <Box sx={{ pt: 2, pb: 4 }}>
         <Stack alignItems="center">
-          <Typography variant="h4" fontWeight="bold" align="center" sx={{ mb: '22px' }}>
+          <Typography variant="h4" fontSize={{ md: "45px", xs: "32px" }} fontWeight="bold" align="center" sx={{ mb: '22px' }}>
             Visualizing Interactions Between<br /> <Box component="span" color="#767676">Blockchain</Box> Addresses
           </Typography>
           <Typography variant="body1" color="#bdbdbd" sx={{ mb: '22px' }}>
@@ -54,9 +54,9 @@ export default function Bholder() {
           </Stack>
         </Stack>
       </Box>
-      <Grid container spacing={0} justifyContent="center">
+      <Grid container spacing={2} justifyContent="center" direction={{ md: "row", sm: "column", xs: "column" }}>
         {cardData.map((item, index) => (
-          <Grid key={index} size={4} md={4}>
+          <Grid key={index} size={4} md={4} sx={{ width: { md: "30%", xs: "100%" } }}>
             <Box sx={bholderstyle}>
               <img src={cardmark} alt="icon" style={{ width: 62, marginBottom: 85 }} />
               <Typography variant="h5" fontWeight="bold" gutterBottom>{item.title}</Typography>
@@ -68,35 +68,38 @@ export default function Bholder() {
         ))}
       </Grid>
       <Box maxWidth="lg" sx={{ mb: 8 }}>
-        <Grid container spacing={3} alignItems="center">
-          <Grid item size={6} md={6}>
+        <Grid container spacing={3} alignItems="center" direction={{ md: "row", sm: "column", xs: "column" }}>
+          <Grid item size={6} sx={{ width: { md: "48%", xs: "100%" } }}>
             <Box component="img" src={card11} alt="Check Blockchain Address" sx={{ width: '100%' }} />
           </Grid>
-          <Grid item size={6} md={6}>
+          <Grid item size={6} sx={{ width: { md: "48%", xs: "100%" } }} alignItems="center">
             <Chip label="Blockchain Address" sx={{ bgcolor: '#23222a', color: '#bdbdbd', p: '17px', fontSize: '14px', mb: "20px" }} />
             <Typography variant="h4" fontWeight={700} mb={2}>Provide data visually</Typography>
             <Typography variant="body1" mb={4}>
               To simplify the perception in the graph of links between addresses, you can see the amount of sent tokens.
               If necessary, you can get details of which transactions it consists of
             </Typography>
-            <Button variant="contained" endIcon={<ArrowForwardIosIcon />} sx={{ borderRadius: 8, px: 4, py: 2, bgcolor: 'white', color: 'black' }}>Read more</Button>
+            <Button variant="contained" endIcon={<ArrowForwardIosIcon />} sx={{ borderRadius: 8, px: 4, py: 2, bgcolor: 'white', color: 'black' }}>FIRST CHECK FREE</Button>
           </Grid>
         </Grid>
-        <Grid container spacing={3} alignItems="center">
-          <Grid item size={6} md={6}>
+        <Grid container spacing={3} alignItems="center" direction={{ md: "row", sm: "column", xs: "column" }}>
+          <Grid item size={6} sx={{ width: { md: "48%", xs: "100%" }, display: { md: "none", xs: "block" } }}>
+            <Box component="img" src={card22} alt="Check Blockchain Address" sx={{ width: '100%' }} />
+          </Grid>
+          <Grid item size={6} sx={{ width: { md: "48%", xs: "100%" } }} alignItems="center">
             <Chip label="Blockchain Address" sx={{ bgcolor: '#23222a', color: '#bdbdbd', p: '17px', fontSize: '14px', mb: "20px" }} />
-            <Typography variant="h4" fontWeight={700} mb={2}>We successfully work with different types of tokens</Typography>
+            <Typography variant="h4" fontWeight={700} mb={2}>Best Price GuaranteeWe successfully work with different types of tokens</Typography>
             <Typography variant="body1" mb={4}>
               The amount of interaction between addresses is displayed in a token or a selected unit of measure, for example USDT.
             </Typography>
-            <Button variant="contained" endIcon={<ArrowForwardIosIcon />} sx={{ borderRadius: 8, px: 4, py: 2, bgcolor: 'white', color: 'white', background: 'linear-gradient(308.69deg, #FF8629 63.74%, #FFD729 92.78%)' }}>Read more</Button>
+            <Button variant="contained" endIcon={<ArrowForwardIosIcon />} sx={{ borderRadius: 8, px: 4, py: 2, bgcolor: 'white', color: 'black' }}>FIRST CHECK FREE</Button>
           </Grid>
-          <Grid item size={6} md={6}>
+          <Grid item size={6} sx={{ width: { md: "48%", xs: "100%" }, display: { md: "block", xs: "none" } }}>
             <Box component="img" src={card22} alt="Check Blockchain Address" sx={{ width: '100%' }} />
           </Grid>
         </Grid>
       </Box>
-      <Stack alignItems="center" spacing={2} sx={{mb:'47px'}}>
+      <Stack alignItems="center" spacing={2} sx={{ mb: '47px' }}>
         <Box component="img" src={logo} alt="Chainsecurity" sx={{ mb: 2, maxWidth: '198px' }} />
         <Typography variant="h4" fontWeight="bold" align="center">Demonstration <br /> of<Box component="span" color="#767676"> Bholder’s </Box>work</Typography>
         <Typography align="center" color="#bdbdbd" sx={{ maxWidth: 700 }}>
@@ -104,7 +107,7 @@ export default function Bholder() {
         </Typography>
       </Stack>
       <Box>
-      <Box component="img" src={movie} alt="Chainsecurity" sx={{ mb: '73px' }} />
+        <Box component="img" src={movie} alt="Chainsecurity" sx={{ mb: '73px', width: '100%', height: '100%' }} />
       </Box>
     </Stack>
   );

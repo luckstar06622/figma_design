@@ -1,4 +1,4 @@
-import { Box,InputAdornment, InputLabel, Typography, FormControl, OutlinedInput, Stack, Chip } from '@mui/material';
+import { Box, InputAdornment, InputLabel, Typography, FormControl, OutlinedInput, Stack, Chip } from '@mui/material';
 import users from '../assets/users.jpg';
 import inputBg from '../assets/inputBg.png';
 import TextareaAutosize from '@mui/material/TextareaAutosize';
@@ -31,17 +31,18 @@ export default function ContactUs() {
         border: "1px",
         padding: "20px"
       }} label="Contact Us" />
-      <Typography sx={{ color: "white", paddingTop: "30px" }} variant="h3" gutterBottom>
-        Let's Chat, Reach Out to Us
-      </Typography>
+      
+      <Typography fontSize={{ md: "45px", xs: "32px" }} sx={{paddingTop: "30px"}} variant="h3" fontWeight="bold" align="center">
+      Let's Chat, Reach Out to Us
+        </Typography>
       <Typography sx={{ color: "white", paddingTop: "20px" }} variant="subtitle1" gutterBottom>
         Do you need a consultation?
       </Typography>
 
-      <Stack sx={{ marginTop: "50px", mb: "247px",maxWidth:'834px', borderRadius: "24px", backgroundImage: `url(${users})`, backgroundSize: "cover", backgroundRepeat: "no-repeat", width: "100%", height: "100%" }}>
+      <Stack sx={{ marginTop: "50px", mb: "247px", maxWidth: '834px', borderRadius: "24px", backgroundImage: `url(${users})`, backgroundSize: "cover", backgroundRepeat: "no-repeat", width: "100%", height: "100%" }}>
         <Stack gap={2} sx={{ padding: "36px 46px" }}>
-          <Stack direction="row" spacing={2}>
-            <Box sx={{ width: "50%", height: "100%" }}>
+          <Stack spacing={2} direction={{ md: "row", sm: "column", xs: "column" }}>
+            <Box sx={{ width: "100%", height: "100%" }}>
               <InputLabel sx={{ color: "white" }}>First Name</InputLabel>
               <FormControl sx={inputBgStyle}>
                 <OutlinedInput sx={{ color: "white" }} placeholder='Enter Your First Name'
@@ -51,7 +52,7 @@ export default function ContactUs() {
                   </svg>} />
               </FormControl>
             </Box>
-            <Box sx={{ width: "50%", height: "100%" }}>
+            <Box sx={{ width: "100%", height: "100%" }}>
               <InputLabel sx={{ color: "white" }}>Last Name</InputLabel>
               <FormControl sx={inputBgStyle}>
                 <OutlinedInput sx={{ color: "white" }} placeholder='Enter Your Last Name'

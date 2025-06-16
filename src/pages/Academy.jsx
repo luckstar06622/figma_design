@@ -41,7 +41,7 @@ export default function Academy() {
         <Stack alignItems="center" alignContent="center">
           <Chip label="Chain Security" sx={{ bgcolor: '#23222a', color: '#bdbdbd', p: '18px', fontSize: '16px', mb: 2 }} />
         </Stack>
-        <Typography variant="h3" fontWeight="bold" gutterBottom sx={{ mb: '22px' }}>
+        <Typography fontSize={{md:"45px",xs:"32px"}} variant="h3" fontWeight="bold" gutterBottom sx={{ mb: '22px' }}>
           Chain <Box component="span" color="#bdbdbd">Security</Box> Academy
         </Typography>
         <Typography variant="body1" color="#bdbdbd">
@@ -52,14 +52,14 @@ export default function Academy() {
           crypto fraud cases around the world.
         </Typography>
       </Container>
-      <Container maxWidth="lg" sx={{ mb: '208px' }}>
-        <Grid container rowSpacing={1} spacing={2}>
+      <Container>
+        <Grid container rowSpacing={3} spacing={3} direction={{ md: "row", sm: "column" , xs: "column" }}>
           {cards.map((card, idx) => (
-            <Grid size={4} key={idx}>
+            <Grid size={4} key={idx} sx={{width:{md:"30%",xs:"100%"}}}>
               <Card sx={{ bgcolor: 'transparent', height: '100%', border: 'none', boxShadow: 'none' }}>
                 <CardMedia
                   component="img"
-                  height="233px"
+                  height="100%"
                   width="100%"
                   image={card.image}
                   alt={card.title}

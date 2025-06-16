@@ -16,9 +16,9 @@ function App() {
   return (
     <BrowserRouter>
       <CssBaseline />
-      <Box sx={{ display: 'flex', minHeight: '100vh', flexDirection: 'column', backgroundImage: `url(${background})` }}>
+      <Box sx={{ display: 'flex', minHeight: '100vh', flexDirection: 'column', backgroundImage: `url(${background})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
         <Header />
-        <Box sx={{ paddingTop: "5px", margin: '35px' }}>
+        <Box sx={{ px: { lg: '92px', md: '20px', xs: '16px', color: 'white' } }}>
           <Routes>
             <Route path="/Bholder" element={<Bholder />} />
             <Route path="/" element={<OurProduct />} />
