@@ -1,6 +1,6 @@
 import { Box, InputAdornment, InputLabel, Typography, FormControl, OutlinedInput, Stack, Chip } from '@mui/material';
-import users from '../assets/users.jpg';
-import inputBg from '../assets/inputBg.png';
+import users from '../assets/users.svg';
+import inputBg from '../assets/inputBg.svg';
 import TextareaAutosize from '@mui/material/TextareaAutosize';
 
 export default function ContactUs() {

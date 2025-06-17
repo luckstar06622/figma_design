@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import * as React from 'react';
-import { AppBar, Drawer, List, Divider, Box, Button, ListItem, Stack, ListItemButton } from '@mui/material';
+import { AppBar, Drawer, List, Box, Button, ListItem, Stack, ListItemButton } from '@mui/material';
 import logo from '../assets/logo.svg';
 import Telegram from '../assets/telegram.svg';
 import Close from '../assets/close.svg';

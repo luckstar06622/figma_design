@@ -28,7 +28,7 @@ const GlobalCarousel = (props) => {
         <div className="embla__container">
           {slides.map((item, index) => (
             <div className="embla__slide" key={index}>
-              <Grid key={index} size={4} md={4} sx={{ width: { md: "30%", xs: "100%" } }}>
+              <Grid  size={4} md={4} sx={{ width: { md: "30%", xs: "100%" } }}>
                 <Box sx={globalstyle}>
                   <img src={cardmark} alt="icon" style={{ width: 62, marginBottom: '48px' }} />
                   <Typography fontSize='24px' fontWeight="bold" gutterBottom>{item.title}</Typography>
