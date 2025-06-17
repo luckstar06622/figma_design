@@ -2,18 +2,18 @@ import { Box, Button, Grid, Typography, Stack, Card, TextField, Accordion, Accor
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import groupM from '../assets/btrace/GroupM.svg';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import icon from '../assets/btrace/icon.svg';
-import Groupbg from '../assets/Groupbg.svg';
 import card11 from '../assets/btrace/card11.svg';
 import card22 from '../assets/btrace/card22.svg';
 import logo from '../assets/product/logo.svg';
 import questionbg from '../assets/btrace/questionbg.svg';
 import searchbg from '../assets/btrace/searchbg.svg';
 import EmblaCarousel from './EmblaCarousel'
-import { ImportantData, Important } from './components';
+import MoneyCarousel from './MoneyCarousel'
+import { ImportantData, Important, MoneyCard,moneycarddata } from './components';
 import '../css/embla.css'
 const OPTIONS = { loop: true }
 const SLIDES = ImportantData;
+const MONEYCARDS = moneycarddata;
 
 const faqData = [
   {
@@ -30,19 +30,7 @@ const faqData = [
   },
 ];
 
-const moneycardstyle = { backgroundImage: `url(${Groupbg})`, backgroundSize: 'unset', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', color: 'white', borderRadius: 3, p: 3, boxShadow: 5 }
 
-const moneycard = [
-  {
-    content: 'protect yourself from "dirty" assets'
-  },
-  {
-    content: 'prevent blocking of funds due to high risk score'
-  },
-  {
-    content: 'get out of trouble with the law'
-  }
-]
 
 export default function Btrace() {
   return (
@@ -60,20 +48,12 @@ export default function Btrace() {
               </Button>
               <Button color="white" sx={{ textTransform: 'none', ml: '30px' }} endIcon={<ArrowForwardIosIcon />}>About Us</Button>
             </Stack>
-            <Stack spacing={2}>
-              <Grid container spacing={2} direction={{ md: "row", sm: "column", xs: "column" }}>
-                {moneycard.map((item, index) => (
-                  <Grid key={index} item size={4} sx={{ width: { md: "30%", xs: "100%" } }}>
-                    <Card sx={moneycardstyle}>
-                      <Stack direction="row" alignItems="center" spacing={2}>
-                        <Box component="img" src={icon} alt="icon" sx={{ width: "61px" }} />
-                        <Typography sx={{ size: '20px' }} variant="body1">{item.content}</Typography>
-                      </Stack>
-                    </Card>
-                  </Grid>
-                ))}
-              </Grid>
-            </Stack>
+            <Box sx={{ display: { lg: 'none', md: 'none', sm: 'none', xs: 'block' } }}>
+              <MoneyCarousel slides={MONEYCARDS} options={OPTIONS} />
+            </Box>
+            <Box sx={{ display: { lg: 'block', md: 'block', sm: 'block', xs: 'none' } }}>
+              <MoneyCard />
+            </Box>
           </Stack>
         </Box>
 
@@ -93,26 +73,26 @@ export default function Btrace() {
         </Box>
 
         {/* Check Crypto Wallet Free Section */}
-        <Box maxWidth="sm" sx={{ mb: 8 }}>
-          <Stack alignItems="center" spacing={2}>
+        <Box sx={{ mb: 8, width: '90%' }}>
+          <Stack spacing={2} sx={{ mb: '20px' }}>
             <Typography variant="h4" fontWeight="bold" align="center">Check Crypto <br /> Wallet <Box component="span" color="#FF8629">Free</Box></Typography>
-            <Typography align="center" color="#bdbdbd">Works with Ethereum, BSC, Bitcoin, Tron, Everscale, Venom <br /> (soon)</Typography>
-            <Box sx={{ backgroundImage: `url(${searchbg})`, backgroundSize: 'unset', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
-              <Box sx={{ width: '100%', mt: 2, display: 'flex', alignItems: 'center', backgroundImage: `url(${questionbg})`, backgroundSize: 'unset', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', borderRadius: 3, p: 1, boxShadow: 3 }}>
-                <TextField
-                  fullWidth
-                  placeholder="Check Wallet Address ..."
-                  variant="standard"
-                  InputProps={{
-                    disableUnderline: true,
-                    sx: { color: 'white', pl: 2 },
-                  }}
-                  sx={{ bgcolor: 'transparent', flex: 1 }}
-                />
-                <Button variant="contained" sx={{ ml: 2, borderRadius: '30px', px: 4, bgcolor: '#FF8629', color: 'white', fontWeight: 600, textTransform: 'none', }}>Check</Button>
-              </Box>
-            </Box>
+            <Typography align="center" color="#bdbdbd">Works with Ethereum, BSC, Bitcoin, Tron, Everscale, Venom  (soon)</Typography>
           </Stack>
+          <Box sx={{ p: '5px', borderRadius: '28px', backgroundImage: `url(${searchbg})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
+            <Box sx={{ width: '100%', display: 'flex', alignItems: 'center', backgroundImage: `url(${questionbg})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', borderRadius: '28px', p: 1, boxShadow: 3 }}>
+              <TextField
+                fullWidth
+                placeholder="Check Wallet Address ..."
+                variant="standard"
+                InputProps={{
+                  disableUnderline: true,
+                  sx: { color: 'white', pl: 2 },
+                }}
+                sx={{ bgcolor: 'transparent', flex: 1 }}
+              />
+              <Button variant="contained" sx={{ ml: 2, borderRadius: '30px', px: 4, bgcolor: '#FF8629', color: 'white', fontWeight: 600, textTransform: 'none', }}>Check</Button>
+            </Box>
+          </Box>
         </Box>
 
         {/* Quality Assurance & Price Guarantee Section */}

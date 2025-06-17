@@ -8,11 +8,13 @@ import icon21 from '../assets/product/icon21.svg';
 import Groupbg from '../assets/Groupbg.svg';
 import logo from '../assets/product/logo.svg';
 import icon from '../assets/btrace/icon.svg';
-import { Company, Global, Blockchain, blockchainData, globalData } from './components';
+import { Company, Global, Blockchain, blockchainData, globalData,moneycardstyle } from './components';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import EmblaCarousel from './EmblaCarousel'
 import GlobalCarousel from './GlobalCarousel'
 import '../css/embla.css'
+import hoverchain from '../assets/hover/hoverchain.svg';
+import hovergroupbg from '../assets/hover/hovergroupbg.svg';
 
 const OPTIONS = { loop: true }
 const SLIDES = blockchainData;
@@ -32,15 +34,6 @@ const chainsecuritydata = [
     content: 'Explore de-anonymized addresses in the graph of connections'
   }
 ]
-const chainsafetycardstyle = {
-  backgroundImage: `url(${Groupbg})`,
-  backgroundSize: 'unset',
-  backgroundPosition: 'center',
-  backgroundRepeat: 'no-repeat',
-  color: 'white',
-  p: 3, boxShadow: 5,
-  width: { md: "100%" }
-}
 
 export default function OurProduct() {
 
@@ -62,17 +55,16 @@ export default function OurProduct() {
       </Box>
       <Box sx={{ position: "relative", display: "flex", justifyContent: "center", alignItems: "center", gap: "20px" }}>
         <Box>
-          {/* <img src={BgShine} alt="BgShine" /> */}
           <img style={{ width: "100%", height: "100%", paddingTop: "112px" }} src={productCardBg} alt="productCardBg" />
         </Box>
-        <Box sx={{ position: 'absolute', top: 10, left: 0, right: 80, bottom: 0 }}>
-          <Box sx={{ position: "absolute", top: "-37px", right: "21px", transform: "rotate(0deg)" }}>
+        <Box sx={{ position: 'absolute', top: { md: '-33px', sm: 0, xs: 0 }, left: { md: 0, sm: 0, xs: -260 }, right: { md: '8%', sm: 0, xs: 0 } }}>
+          <Box sx={{ position: "absolute", top: "0px", right: "0px", transform: "rotate(0deg)" }}>
             <img style={{ width: "100%", height: "100%", padding: "112px" }} src={cardGroup} alt="cardGroup" />
           </Box>
-          <Box sx={{ position: "absolute", top: "-60px", right: "35px", transform: "rotate(-3deg)" }}>
+          <Box sx={{ position: "absolute", top: "-25px", right: "17px", transform: "rotate(-3deg)" }}>
             <img style={{ width: "100%", height: "100%", padding: "112px" }} src={cardGroup} alt="cardGroup" />
           </Box>
-          <Box sx={{ position: "absolute", top: "-77px", right: "70px", transform: "rotate(-2deg)" }}>
+          <Box sx={{ position: "absolute", top: "-40px", right: "58px", transform: "rotate(-2deg)" }}>
             <img style={{ width: "100%", height: "100%", padding: "112px" }} src={cardProduct} alt="cardProduct" />
           </Box>
         </Box>
@@ -107,12 +99,14 @@ export default function OurProduct() {
         <Grid direction={{ md: "row", sm: "column", xs: "column" }} container spacing={{ md: 2, xs: 1 }} sx={{ margin: '100px' }}>
           {chainsecuritydata.map((item, index) => (
             <Grid key={index} item size={{ md: 6, sm: 12, xs: 12 }}>
-              <Card sx={chainsafetycardstyle}>
-                <Stack direction="row" alignItems="center" spacing={2}>
-                  <Box component="img" src={icon} alt="icon" sx={{ width: "61px" }} />
-                  <Typography sx={{ size: '20px' }} variant="body1">{item.content}</Typography>
-                </Stack>
-              </Card>
+              <Box sx={{ backgroundImage: `url(${hoverchain})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', p: '0px', ":hover": { p: '7px', transition: '0.2s', cursor: 'pointer', "img": { backgroundColor: '#FF8629', transition: '0.2s' } }, borderRadius: '29px' }}>
+                <Card sx={moneycardstyle}>
+                  <Stack direction="row" alignItems="center" spacing={2}>
+                    <Box component="img" src={icon} alt="icon" sx={{ p: '13px', backgroundColor: '#23222a', borderRadius: '50%' }} />
+                    <Typography sx={{ size: '20px' }} variant="body1">{item.content}</Typography>
+                  </Stack>
+                </Card>
+              </Box>
             </Grid>
           ))}
         </Grid>

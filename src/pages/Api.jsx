@@ -2,9 +2,8 @@ import { Box, Button, Grid, Typography, Stack, Chip } from '@mui/material';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import card from '../assets/api/card.svg';
 import cardbg from '../assets/api/cardbg.svg';
-import cardmark from '../assets/about/cardmark.svg';
 import GlobalCarousel from './GlobalCarousel'
-import { cardData, IssuesCard, globalstyle } from './components';
+import { cardData, IssuesCard } from './components';
 import '../css/embla.css'
 const OPTIONS = { loop: true }
 const GLOBALSLIDES = cardData;

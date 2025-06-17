@@ -3,34 +3,15 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import card11 from '../assets/btrace/card11.svg';
 import card22 from '../assets/btrace/card22.svg';
 import logo from '../assets/product/logo.svg';
-import { bholderstyle, globalstyle, globalData } from './components';
-import cardmark from '../assets/about/cardmark.svg';
+import { bholdercardData,BholderCard } from './components';
 import movie from '../assets/bholder/movie.svg'
+import '../css/embla.css'
+import GlobalCarousel from './GlobalCarousel'
+const OPTIONS = { loop: true }
+const BHOLDERDATA = bholdercardData;
 
 
 export default function Bholder() {
-  const cardData = [
-    {
-      title: 'Graph-Based Address Visualization',
-      content: 'Visualize addresses as graphical elements and connections between them'
-    },
-    {
-      title: 'Follow the Flow of Blockchain Funds',
-      content: 'Trace the path of funds from the address under investigation to their current location'
-    },
-    {
-      title: 'Identify Probable Wallet Owners',
-      content: 'Obtain information on likely owners based on address markup'
-    },
-    {
-      title: 'Detect the Source of Crypto Assets',
-      content: 'Establish the sources of origin of funds on the cryptocurrency address'
-    },
-    {
-      title: 'Group Data for Better Insight',
-      content: 'Simplify the perception of a large number of transactions and addresses through grouping'
-    },
-  ];
   return (
     <Stack color='white' alignItems="center" sx={{ width: '100%' }}>
       <Stack alignItems="center" alignContent="center">
@@ -54,19 +35,12 @@ export default function Bholder() {
           </Stack>
         </Stack>
       </Box>
-      <Grid container spacing={2} justifyContent="center" direction={{ md: "row", sm: "column", xs: "column" }}>
-        {cardData.map((item, index) => (
-          <Grid key={index} size={4} md={4} sx={{ width: { md: "30%", xs: "100%" } }}>
-            <Box sx={bholderstyle}>
-              <img src={cardmark} alt="icon" style={{ width: 62, marginBottom: 85 }} />
-              <Typography variant="h5" fontWeight="bold" gutterBottom>{item.title}</Typography>
-              <Typography color="#bdbdbd">
-                {item.content}
-              </Typography>
-            </Box>
-          </Grid>
-        ))}
-      </Grid>
+      <Box sx={{ display: { lg: 'none', md: 'none', sm: 'block', xs: 'block' } }}>
+        <GlobalCarousel slides={BHOLDERDATA} options={OPTIONS} />
+      </Box>
+      <Box sx={{ display: { lg: 'block', md: 'block', sm: 'none', xs: 'none' } }}>
+        <BholderCard />
+      </Box>
       <Box maxWidth="lg" sx={{ mb: 8 }}>
         <Grid container spacing={3} alignItems="center" direction={{ md: "row", sm: "column", xs: "column" }}>
           <Grid item size={6} sx={{ width: { md: "48%", xs: "100%" } }}>

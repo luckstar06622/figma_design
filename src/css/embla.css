@@ -25,7 +25,7 @@
 
 @media screen and (max-width: 768px) {
   .embla {
-    max-width: 45rem;    
+    max-width: 42rem;    
     margin: auto;
     --slide-height: 19rem;
     --slide-spacing: 1rem;
@@ -34,10 +34,10 @@
 }
 @media screen and (max-width: 440px) {
   .embla {
-    max-width: 360px;
+    max-width: 400px;
     margin: auto;
     --slide-height: 18rem;
-    --slide-size: 89%;
+    --slide-size: 83%;
   }
 }
 @media screen and (max-width: 376px) {

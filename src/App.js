@@ -21,10 +21,10 @@ function App() {
         <Box sx={{ px: { lg: '92px', md: '20px', xs: '16px', color: 'white' } }}>
           <Routes>
             <Route path="/Bholder" element={<Bholder />} />
-            <Route path="/" element={<OurProduct />} />
+            <Route path="/ourProduct" element={<OurProduct />} />
             <Route path="/Academy" element={<Academy />} />
             <Route path="/About" element={<About />} />
-            <Route path="/ContactUs" element={<ContactUs />} />
+            <Route path="/Contact" element={<ContactUs />} />
             <Route path="/Btrace" element={<Btrace />} />
             <Route path="/Api" element={<Api />} />
           </Routes>

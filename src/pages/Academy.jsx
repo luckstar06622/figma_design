@@ -1,5 +1,5 @@
 // ... existing code ...
-import { Box, Container,Stack, Typography, Chip, Grid, Card, CardMedia, CardContent, } from '@mui/material';
+import { Box, Container, Stack, Typography, Chip, Grid, Card, CardMedia, CardContent, Button } from '@mui/material';
 
 import image0 from '../assets/Academy/image0.svg';
 import image1 from '../assets/Academy/image1.svg';
@@ -9,22 +9,22 @@ import image3 from '../assets/Academy/image3.svg';
 const cards = [
   {
     title: "Glossary",
-    date: "February 12, 2023",
+    day: "February 12, 2023",
     image: image0,
   },
   {
     title: "Lesson №1. Blockchain",
-    date: "February 12, 2023",
+    day: "February 12, 2023",
     image: image1,
   },
   {
     title: "Lesson №2. Blockchain Basics, Ethereum...",
-    date: "February 12, 2023",
+    day: "February 12, 2023",
     image: image2,
   },
   {
     title: "Lesson №3. How to earn on the blockchain...",
-    date: "February 12, 2023",
+    day: "February 12, 2023",
     image: image3,
   },
 ];
@@ -41,7 +41,7 @@ export default function Academy() {
         <Stack alignItems="center" alignContent="center">
           <Chip label="Chain Security" sx={{ bgcolor: '#23222a', color: '#bdbdbd', p: '18px', fontSize: '16px', mb: 2 }} />
         </Stack>
-        <Typography fontSize={{md:"45px",xs:"32px"}} variant="h3" fontWeight="bold" gutterBottom sx={{ mb: '22px' }}>
+        <Typography fontSize={{ md: "45px", xs: "32px" }} variant="h3" fontWeight="bold" gutterBottom sx={{ mb: '22px' }}>
           Chain <Box component="span" color="#bdbdbd">Security</Box> Academy
         </Typography>
         <Typography variant="body1" color="#bdbdbd">
@@ -52,25 +52,49 @@ export default function Academy() {
           crypto fraud cases around the world.
         </Typography>
       </Container>
-      <Container>
-        <Grid container rowSpacing={3} spacing={3} direction={{ md: "row", sm: "column" , xs: "column" }}>
+      <Container sx={{mb:'118px'}}>
+        <Grid container rowSpacing={0} spacing={2} direction={{ md: "row", sm: "column", xs: "column" }}>
           {cards.map((card, idx) => (
-            <Grid size={4} key={idx} sx={{width:{md:"30%",xs:"100%"}}}>
-              <Card sx={{ bgcolor: 'transparent', height: '100%', border: 'none', boxShadow: 'none' }}>
-                <CardMedia
-                  component="img"
-                  height="100%"
-                  width="100%"
-                  image={card.image}
-                  alt={card.title}
-                />
-                <CardContent sx={{ padding: '0px', mt: '10px' }}>
-                  <Typography variant="subtitle1" fontWeight="bold" gutterBottom sx={{ color: '#fff' }}>
-                    {card.title}
-                  </Typography>
-                  <Typography variant="caption" color="#bdbdbd">
-                    {card.date}
-                  </Typography>
+            <Grid size={4} key={idx} sx={{ width: { md: "32%", xs: "100%" } }}>
+              <Card variant="outlined" sx={{ bgcolor: 'transparent', height: '100%', border: 'none', boxShadow: 'none', color: 'rgba(255, 255, 255, 0.65)',
+                '&:hover': {
+                  'div': {
+                    opacity: 1,
+                    transition: 'all 1s ease',
+                  },
+                  'img':{
+                    opacity: 0.5,
+                    transition: 'all 1s ease',
+                  },
+                }
+               }}>
+                <Box sx={{ position: 'relative', paddingTop: '60%' }}> {/* 50% creates a 2:1 aspect ratio */}
+                  <Box
+                    component="img"
+                    src={card.image}
+                    alt="image0"
+                    sx={{
+                      position: 'absolute',
+                      top: 0,
+                      left: 0,
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+                      cursor:'pointer',
+                    }}
+                  />
+                  <CardContent sx={{
+                    position: 'absolute',
+                    top: { md: '25%', sm: '36%', xs: '25%' },
+                    left: { md: '25%', sm: '36%', xs: '25%' },
+                    opacity:0
+                  }}>
+                    <Button variant="outlined" sx={{ bgcolor: 'white', color: 'black', fontSize: '14px', fontWeight: 'bold', textTransform: 'none', borderRadius: '30px', px: '34px', py: '12px' }}>Read More</Button>
+                  </CardContent>
+                </Box>
+                <CardContent>
+                  <Typography fontSize='16px' level="title-md">{card.title}</Typography>
+                  <Typography fontSize='12px' level="body-sm">{card.day}</Typography>
                 </CardContent>
               </Card>
             </Grid>

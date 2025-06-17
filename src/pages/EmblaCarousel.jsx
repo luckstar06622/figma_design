@@ -28,11 +28,11 @@ const EmblaCarousel = (props) => {
           {slides.map((data, index) => (
             <div className="embla__slide" key={index}>
               <Box sx={blockchainstyle}>
-                <Box sx={{ px: { md: "15px", sm: "90px", xs: "55px" },pt:'24px' }}>
+                <Box sx={{ px: { md: "15px", sm: "90px", xs: "55px" }, pt: '20px' }}>
                   <Box component="img" src={data.img} sx={cardstyle} alt="icon" />
                 </Box>
                 <Box sx={{ px: "33px", pb: '30px' }}>
-                  <Typography fontSize="24px" sx={{ color: "white", bottom: 0 }}  gutterBottom>
+                  <Typography fontSize="24px" sx={{ color: "white", bottom: 0 }} gutterBottom>
                     {data.title}
                   </Typography>
                   <Typography sx={{ color: "white", fontSize: "14px" }} >

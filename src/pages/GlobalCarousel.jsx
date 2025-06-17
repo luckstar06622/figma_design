@@ -14,7 +14,7 @@ export const globalstyle = {
   alignItems: 'flex-start',
   justifyContent: 'center',
   width: '100%',
-  minHeight: '417px',
+  minHeight: '300px',
   borderRadius: '20px',
 }
 
