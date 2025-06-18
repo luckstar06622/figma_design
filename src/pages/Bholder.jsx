@@ -5,6 +5,7 @@ import card22 from '../assets/btrace/card22.svg';
 import logo from '../assets/product/logo.svg';
 import { bholdercardData, Global } from './components';
 import movie from '../assets/bholder/movie.svg'
+import moviemobile from '../assets/bholder/moviemobile.svg'
 import '../css/embla.css'
 import { WhyChooseChainsecurity } from './component';
 import GlobalCarousel from './GlobalCarousel'
@@ -74,7 +75,8 @@ export default function Bholder() {
         </Typography>
       </Stack>
       <Box>
-        <Box component="img" src={movie} alt="Chainsecurity" sx={{ mb: '73px', width: '100%', height: '100%' }} />
+        <Box component="img" src={movie} alt="Chainsecurity" sx={{display:{md:'block',sm:'block',xs:'none'}, mb: '73px', width: '100%', height: '100%' }} />
+        <Box component="img" src={moviemobile} alt="Chainsecurity" sx={{display:{md:'none',sm:'none',xs:'block'}, mb: '73px', width: '100%', height: '100%' }} />
       </Box>
     </Stack>
   );

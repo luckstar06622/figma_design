@@ -19,25 +19,28 @@ export default function ContactUs() {
     color: "white",
     padding: "22px 60px",
     fontSize: "17px",
-    backgroundImage: `url(${inputBg})`, backgroundRepeat: "no-repeat"
+    backgroundImage: `url(${inputBg})`, backgroundRepeat: "no-repeat",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundColor: "transparent"
   }
 
   return (
-    <Stack alignItems="center" sx={{p:{md:'0',xs:'16px'}}}>
-      
+    <Stack alignItems="center" sx={{ p: { md: '0', xs: '16px' } }}>
+
       <Stack>
-        <Chip label="Contact Us" sx={{ bgcolor: '#23222a', color: '#bdbdbd', px: '5px', py: '20px', fontSize: '14px', mb: { md: '33px', xs: '18px' } }} />
+        <Chip label="Contact Us" sx={{ bgcolor: '#23222a', color: '#bdbdbd', p: '20px', fontSize: '14px', mb: { md: '33px', xs: '18px' } }} />
       </Stack>
 
-      <Typography fontSize={{ md: "45px", xs: "32px" }} sx={{ paddingTop: "33px" }} variant="h3" fontWeight="bold" align="center">
+      <Typography fontSize={{ md: "45px", xs: "32px" }} px={"12px"} variant="h3" fontWeight="bold" align="center">
         Let's Chat, Reach Out to Us
       </Typography>
       <Typography sx={{ color: "white", paddingTop: "20px" }} variant="subtitle1" gutterBottom>
         Do you need a consultation?
       </Typography>
 
-      <Stack sx={{ marginTop:{md:'56px',xs:'30px'}, mb:{md:'247px',xs:'49px'}, maxWidth: '834px', borderRadius: "24px", backgroundImage: `url(${users})`, backgroundSize: "cover", backgroundRepeat: "no-repeat", width: "100%", height: "100%" }}>
-        <Stack gap={2} sx={{ padding: { md: '36px 46px', xs: '26px 10px' } }}>
+      <Stack sx={{ marginTop: { md: '56px', xs: '30px' }, mb: { md: '247px', xs: '49px' }, maxWidth: '834px', borderRadius: "24px", backgroundImage: `url(${users})`, backgroundSize: "cover", backgroundRepeat: "no-repeat", width: "100%", height: "100%" }}>
+        <Stack gap={4} sx={{ padding: { md: '36px 46px', xs: '26px 10px' } }}>
           <Stack spacing={2} direction={{ md: "row", sm: "column", xs: "column" }}>
             <Box sx={{ width: "100%", height: "100%" }}>
               <InputLabel sx={{ color: "white" }}>First Name</InputLabel>
@@ -75,20 +78,22 @@ export default function ContactUs() {
               />
             </FormControl>
           </Box>
-          <InputLabel sx={{ color: "white" }}>Message</InputLabel>
-          <FormControl>
-            <TextareaAutosize
-              aria-label="minimum height"
-              minRows={7}
-              style={inputBgStyle1}
-              placeholder='Enter Your Message'
-            />
-            <Box sx={{ position: "absolute", top: "20px", left: "20px" }}>
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M12 18H18C19.657 18 21 16.657 21 15V7C21 5.343 19.657 4 18 4H6C4.343 4 3 5.343 3 7V15C3 16.657 4.343 18 6 18H7.5V21L12 18Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-            </Box>
-          </FormControl>
+          <Box>
+            <InputLabel sx={{ color: "white" }}>Message</InputLabel>
+            <FormControl sx={{width:'100%'}}>
+              <TextareaAutosize
+                aria-label="minimum height"
+                minRows={7}
+                style={inputBgStyle1}
+                placeholder='Enter Your Message'
+              />
+              <Box sx={{ position: "absolute", top: "20px", left: "20px" }}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M12 18H18C19.657 18 21 16.657 21 15V7C21 5.343 19.657 4 18 4H6C4.343 4 3 5.343 3 7V15C3 16.657 4.343 18 6 18H7.5V21L12 18Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </Box>
+            </FormControl>
+          </Box>
           <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
             <Button
               variant="contained"

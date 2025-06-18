@@ -4,6 +4,7 @@ import marks from '../assets/about/marks.svg';
 import EmblaCarousel from './EmblaCarousel'
 import GlobalCarousel from './GlobalCarousel'
 import { Company, Global, Blockchain, blockchainData, globalData } from './components';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import '../css/embla.css'
 import { SeeAllBtn } from './Button';
 const OPTIONS = { loop: true }
@@ -37,7 +38,7 @@ export default function About() {
           <Global slides={GLOBALSLIDES} options={OPTIONS} />
         </Box>
       </Container>
-      <Stack alignItems="center" sx={{mt:'40px', mb: '65px' }}>
+      <Stack alignItems="center" sx={{ mt: '40px', mb: '65px' }}>
         <Button variant="contained" sx={{
           borderRadius: '100px',
           px: 7,
@@ -54,41 +55,32 @@ export default function About() {
         }}>Ask a Question</Button>
       </Stack>
       {/* Compliance Section */}
-      <Grid container spacing={2} alignItems="center" justifyContent="center" direction={{ md: "row", sm: "column", xs: "column" }} sx={{ mb: { md: '33px', xs: '79px' } }}>
+      <Grid container spacing={{ md: 3, sm: 2, xs: 0 }} alignItems="center" justifyContent="center" direction={{ md: "row", sm: "column", xs: "column" }} sx={{ mb: { md: '33px', xs: '79px' } }}>
         <Grid item size={6} sx={{ width: { md: "48%", xs: "100%" } }}>
           <Box component="img" src={card5} alt="Check Blockchain Address" sx={{ width: '100%' }} />
         </Grid>
         <Grid item size={6} sx={{ width: { md: "48%", xs: "100%" }, textAlign: { md: 'left', xs: 'center' }, px: { md: 0, xs: '16px' } }}>
-          <img src={marks} alt="FATF" sx={{ maxWidth: {md:'517px',xs:'120px'} }} />
+          <Box component="img" src={marks} alt="FATF" sx={{ maxWidth: { md: '517px', xs: '128px' } }} />
           <Typography variant="h4" fontWeight={700} mb={2}>Compliance With Global AML/CFT Standards</Typography>
           <Typography variant="body1" mb={4}>
             The company's products comply with local AML/CFT requirements, FATF recommendations, including the Travel Rule, and EU Directive 6AMLD, which aims to combat money laundering, terrorist financing and the proliferation of weapons of mass destruction.
           </Typography>
           <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-            <Button
-              variant="contained"
-              sx={{
-                display: { md: 'none', xs: 'block' },
-                width: '249px',
-                height: '48px',
-                borderRadius: '100px',
-                px: '10px',
-                py: '14px',
-                fontSize: '12px',
-                bgcolor: 'white',
-                color: 'black',
-                textTransform: 'none',
-                fontWeight: 600
-              }}
-            >
-              FIRST CHECK FREE
-            </Button>
+            <Button variant="contained" endIcon={<ArrowForwardIosIcon />} sx={{
+              size: { md: '14px', xs: '12px' },
+              borderRadius: 8,
+              px: { md: 5, sm: 4, xs: 5 },
+              py: { md: 2, sm: '10px', xs: '13px' },
+              background: 'white',
+              color: 'black',
+              mb: '24px'
+            }}>FIRST CHECK FREE</Button>
           </Box>
         </Grid>
       </Grid>
       {/* Tools Section */}
-      <Stack alignItems="center" spacing={2} sx={{ mb: 4 ,p:5}}>
-        <Typography variant="h4" fontWeight="bold" align="center">
+      <Stack alignItems="center" spacing={2} sx={{ mb: 4, p: 5 }}>
+        <Typography fontSize={{ md: "45px", xs: "32px", maxWidth: '810px' }} fontWeight="bold" align="center">
           <Box component="span" color="#bdbdbd">Chainsecurity</Box> Tools Make Blockchain Safer
         </Typography>
         <Typography color="#bdbdbd" align="center" sx={{ maxWidth: 700 }}>

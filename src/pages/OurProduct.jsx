@@ -80,7 +80,7 @@ export default function OurProduct() {
         <Box sx={{ display: { md: 'none',sm:'none', xs: 'block' } }}>
           <img style={{ width: "100%", paddingTop: "15px" }} src={productcardbgmobile} alt="productcardbgmobile" />
         </Box>
-        <Box sx={{ position: 'absolute', top: { md: '80px', sm: '50px', xs: '235px' }, left: { md: 0, sm: 0, xs: 0 }, right: { md: '245px', sm: 0, xs: 0 } }}>
+        <Box sx={{ position: 'absolute', top: { md: '80px', sm: '50px', xs: '180px' }, left: { md: 0, sm: 0, xs: 0 }, right: { md: '245px', sm: 0, xs: 0 } }}>
           <Box sx={{ position: "absolute", top: "0px", right: "0px", transform: "rotate(0deg)" }}>
             <Box component="img" sx={{ width: { md: '100%', xs: '85%' } }} src={cardGroup} alt="cardGroup" />
           </Box>

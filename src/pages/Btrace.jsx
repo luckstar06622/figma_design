@@ -97,11 +97,11 @@ export default function Btrace() {
 
         {/* You Don't Have To Do Anything Bad To Get Blocked Section */}
         <Box sx={{ mt: { md: '96px', xs: '32px' }, mb: 8 }}>
-          <Stack alignItems="center" spacing={2}>
-            <Typography fontSize={{ md: "45px", xs: "32px", maxWidth: '861px' }} variant="h4" fontWeight="bold" align="center">
+          <Stack alignItems="center" spacing={2}  sx={{ maxWidth: '861px' ,p:'10px'}}>
+            <Typography fontSize={{ md: "45px", xs: "32px" }} variant="h4" fontWeight="bold" align="center">
               You <Box component="span" color="#bdbdbd">Don't Have</Box> To Do Anything Bad To  Get Blocked
             </Typography>
-            <Typography align="center" color="#bdbdbd" sx={{ maxWidth: 861 }}>
+            <Typography align="center" color="#bdbdbd">
               Let's imagine Austin – a 29-year-old crypto user living a perfectly ordinary working as a system analyst in a successful IT company. His stable salary is complemented by additional income from various freelance projects, which allows him to periodically invest in cryptocurrencies.
             </Typography>
             <Box sx={{ width: '100%', mt: { md: '32px', xs: '17px' }, mb: { md: '96px', xs: '53px' }, borderRadius: 4, overflow: 'hidden', boxShadow: 3, display: { xs: 'none', md: 'block' } }}>
@@ -116,11 +116,11 @@ export default function Btrace() {
         {/* Check Crypto Wallet Free Section */}
         <Box sx={{ mb: 8, width: '90%' }}>
           <Stack spacing={2} sx={{ mb: '20px', textAlign: 'center', alignItems: 'center' }}>
-            <Typography variant="h4" fontWeight="bold" align="center" sx={{ maxWidth: { md: '400px', xs: '300px' } }}>Check Crypto  Wallet <Box component="span" color="#bdbdbd">Free</Box></Typography>
+            <Typography fontSize={{ md: "45px", xs: "32px" }} fontWeight="bold" align="center" sx={{ maxWidth: { md: '330px', xs: '300px' } }}>Check Crypto  Wallet <Box component="span" color="#bdbdbd">Free</Box></Typography>
             <Typography align="center" color="#bdbdbd" sx={{ maxWidth: '480px' }}>Works with Ethereum, BSC, Bitcoin, Tron, Everscale, Venom  (soon)</Typography>
           </Stack>
-          <Box sx={{ p: '5px', borderRadius: '28px', backgroundImage: `url(${searchbg})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
-            <Box sx={{ width: '100%', display: 'flex', alignItems: 'center', backgroundImage: `url(${questionbg})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', borderRadius: '28px', p: 1, boxShadow: 3 }}>
+          <Box sx={{ maxWidth: '1001px', p: '10px', borderRadius: '100px', backgroundImage: `url(${searchbg})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
+            <Box sx={{ width: '100%', display: 'flex', alignItems: 'center', backgroundImage: `url(${questionbg})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', borderRadius: '100px', p: 2, boxShadow: 3 }}>
               <TextField
                 fullWidth
                 placeholder="Check Wallet Address ..."
@@ -142,7 +142,7 @@ export default function Btrace() {
         </Box>
 
         {/* Why Is It Important To Check Section */}
-        <Box sx={{ mb: {md:'45px',xs:'24px'} }}>
+        <Box sx={{ mb: { md: '45px', xs: '24px' } }}>
           <Stack alignItems="center" spacing={2}>
             <Box component="img" src={logo} alt="Chainsecurity" sx={{ mb: 2, maxWidth: '198px' }} />
             <Typography variant="h4" fontWeight="bold" align="center">Why Is It <Box component="span" color="#bdbdbd">Important</Box> To Check?</Typography>
@@ -158,30 +158,30 @@ export default function Btrace() {
         <EmblaCarousel slides={SLIDES} options={OPTIONS} />
       </Box>
       <Box sx={{ display: { lg: 'block', md: 'none', sm: 'none', xs: 'none' } }}>
-        <Blockchain  slides={SLIDES} options={OPTIONS}/>
+        <Blockchain slides={SLIDES} options={OPTIONS} />
       </Box>
       {/* FAQ Section */}
-      <Stack alignItems="center" sx={{ mt:{md:'118px',xs:'80px'} }}>
-        <Box maxWidth="md" sx={{ mb:{md:'60px',xs:'80px'} }}>
+      <Stack alignItems="center" sx={{ mt: { md: '118px', xs: '80px' } }}>
+        <Box maxWidth="md" sx={{ mb: { md: '60px', xs: '80px' } }}>
           <Stack alignItems="center">
-            <Chip label="FAQ" sx={{ 
-              bgcolor: '#23222a', 
-              color: '#bdbdbd', 
+            <Chip label="FAQ" sx={{
+              bgcolor: '#23222a',
+              color: '#bdbdbd',
               width: { xs: '131px', md: '96px' },
               height: '38px',
               borderRadius: '51px',
-              p: '10px', 
-              fontSize: '14px', 
-              mb: '30px' 
+              p: '10px',
+              fontSize: '14px',
+              mb: '30px'
             }} />
             <Typography sx={{ mb: '24px' }} variant="h4" fontWeight="bold" align="center">Frequently <Box component="span" color="#bdbdbd">Asked</Box> Questions</Typography>
             <Typography align="center" color="#bdbdbd" sx={{ maxWidth: 700 }}>
               Specializes in developing blockchain analytics tools and investigating crypto fraud incidents worldwide.
             </Typography>
           </Stack>
-          <Box sx={{ mt: 4,p:{md:'0',xs:'16px'} }}>
+          <Box sx={{ mt: 4, p: { md: '0', xs: '16px' } }}>
             {faqData.map((faq, idx) => (
-              <Accordion key={idx} sx={{ backgroundImage: `url(${questionbg})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', color: 'white', mb: 2, borderRadius: 2, boxShadow: 2 }}>
+              <Accordion key={idx} sx={{ backgroundImage: `url(${questionbg})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', color: 'white', mb: 2, borderRadius: '16px !important', boxShadow: 2, p: '15px' }}>
                 <AccordionSummary expandIcon={<ExpandMoreIcon sx={{ color: 'white' }} />}>
                   <Typography fontWeight="bold">{faq.question}</Typography>
                 </AccordionSummary>

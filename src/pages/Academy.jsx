@@ -40,15 +40,13 @@ export default function Academy() {
       <Stack>
         <Chip label="Chain Security" sx={{ bgcolor: '#23222a', color: '#bdbdbd', px: '5px', py: '20px', fontSize: '14px', mb: { md: '33px', xs: '18px' } }} />
       </Stack>
-      <Container maxWidth="md" sx={{ textAlign: 'center', mb: 6 }}>
+      <Container sx={{ textAlign: 'center', mb: 6,maxWidth:{md:'606px',xs:'300px'} }}>
         <Typography fontSize={{ md: "45px", xs: "32px" }} variant="h3" fontWeight="bold" gutterBottom sx={{ mb: '22px' }}>
           Chain <Box component="span" color="#bdbdbd">Security</Box> Academy
         </Typography>
         <Typography variant="body1" color="#bdbdbd">
           Chain Security is a technology company, speakers at leading industry exhibitions
-          <br />
           on blockchain technologies, big data and information security, investigations of
-          <br />
           crypto fraud cases around the world.
         </Typography>
       </Container>
