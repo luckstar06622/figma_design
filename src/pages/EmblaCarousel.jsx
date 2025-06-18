@@ -8,7 +8,7 @@ export const blockchainstyle = {
   backgroundSize: "cover",
   backgroundPosition: "center",
   backgroundRepeat: "no-repeat",
-  width: { md: "397px", sm: "397px", xs: '320px' }, height: { md: "100%", xs: '381px' },
+  width: { md: "397px", sm: "340px", xs: '320px' }, height: { md: "100%",xs: '400px' },
   borderRadius: '20px',
 }
 export const cardstyle = {
@@ -28,7 +28,7 @@ const EmblaCarousel = (props) => {
           {slides.map((data, index) => (
             <div className="embla__slide" key={index}>
               <Box sx={blockchainstyle}>
-                <Box sx={{ px: { md: "15px", sm: "90px", xs: "55px" }, pt: '20px' }}>
+                <Box sx={{ px: { md: "15px", sm: "65px", xs: "55px" }, pt: '20px' }}>
                   <Box component="img" src={data.img} sx={cardstyle} alt="icon" />
                 </Box>
                 <Box sx={{ px: "33px", pb: '30px' }}>

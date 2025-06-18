@@ -1,4 +1,4 @@
-import { Box, InputAdornment, InputLabel, Typography, FormControl, OutlinedInput, Stack, Chip } from '@mui/material';
+import { Box, Button, InputAdornment, InputLabel, Typography, FormControl, OutlinedInput, Stack, Chip } from '@mui/material';
 import users from '../assets/users.svg';
 import inputBg from '../assets/inputBg.svg';
 import TextareaAutosize from '@mui/material/TextareaAutosize';
@@ -23,24 +23,21 @@ export default function ContactUs() {
   }
 
   return (
-    <Stack alignItems="center">
-      <Chip sx={{
-        backgroundColor: "rgba(39, 39, 50, 1)",
-        borderColor: "rgba(255, 255, 255, 0.2)",
-        color: "white",
-        border: "1px",
-        padding: "20px"
-      }} label="Contact Us" />
+    <Stack alignItems="center" sx={{p:{md:'0',xs:'16px'}}}>
       
-      <Typography fontSize={{ md: "45px", xs: "32px" }} sx={{paddingTop: "30px"}} variant="h3" fontWeight="bold" align="center">
-      Let's Chat, Reach Out to Us
-        </Typography>
+      <Stack>
+        <Chip label="Contact Us" sx={{ bgcolor: '#23222a', color: '#bdbdbd', px: '5px', py: '20px', fontSize: '14px', mb: { md: '33px', xs: '18px' } }} />
+      </Stack>
+
+      <Typography fontSize={{ md: "45px", xs: "32px" }} sx={{ paddingTop: "33px" }} variant="h3" fontWeight="bold" align="center">
+        Let's Chat, Reach Out to Us
+      </Typography>
       <Typography sx={{ color: "white", paddingTop: "20px" }} variant="subtitle1" gutterBottom>
         Do you need a consultation?
       </Typography>
 
-      <Stack sx={{ marginTop: "50px", mb: "247px", maxWidth: '834px', borderRadius: "24px", backgroundImage: `url(${users})`, backgroundSize: "cover", backgroundRepeat: "no-repeat", width: "100%", height: "100%" }}>
-        <Stack gap={2} sx={{ padding: "36px 46px" }}>
+      <Stack sx={{ marginTop:{md:'56px',xs:'30px'}, mb:{md:'247px',xs:'49px'}, maxWidth: '834px', borderRadius: "24px", backgroundImage: `url(${users})`, backgroundSize: "cover", backgroundRepeat: "no-repeat", width: "100%", height: "100%" }}>
+        <Stack gap={2} sx={{ padding: { md: '36px 46px', xs: '26px 10px' } }}>
           <Stack spacing={2} direction={{ md: "row", sm: "column", xs: "column" }}>
             <Box sx={{ width: "100%", height: "100%" }}>
               <InputLabel sx={{ color: "white" }}>First Name</InputLabel>
@@ -93,15 +90,26 @@ export default function ContactUs() {
             </Box>
           </FormControl>
           <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
-            <Chip sx={{
-              background: "linear-gradient(308.69deg, #FF8629 63.74%, #FFD729 92.78%)",
-              borderColor: "rgba(255, 255, 255, 0.2)",
-              color: "white",
-              border: "1px",
-              padding: "23px",
-              m: "5px",
-              width: "140px"
-            }} label="Contact Us" />
+            <Button
+              variant="contained"
+              sx={{
+                background: "linear-gradient(308.69deg, #FF8629 63.74%, #FFD729 92.78%)",
+                borderColor: "rgba(255, 255, 255, 0.2)",
+                color: "white",
+                border: "1px",
+                width: "170px",
+                height: "54px",
+                borderRadius: "100px",
+                py: "14px",
+                px: "10px",
+                fontSize: "14px",
+                m: "5px",
+                textTransform: 'none',
+                display: { md: 'block', xs: 'none' }
+              }}
+            >
+              Contact Us
+            </Button>
           </Box>
         </Stack>
       </Stack>

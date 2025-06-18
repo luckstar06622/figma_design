@@ -34,7 +34,7 @@ const MoneyCarousel = (props) => {
                 <Box sx={{ backgroundImage: `url(${hoverchain})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', p: '0px', ":hover": { p: '7px', transition: '0.2s', cursor: 'pointer', "img": { backgroundColor: '#FF8629', transition: '0.2s' } }, borderRadius: '29px' }}>
                   <Card sx={moneycardstyle}>
                     <Stack direction="row" alignItems="center" spacing={2}>
-                      <Box component="img" src={icon} alt="icon" sx={{ p: '13px', backgroundColor: '#23222a', borderRadius: '50%' }} />
+                      <Box component="img" src={icon} alt="icon" sx={{ p: '10px', backgroundColor: '#23222a', borderRadius: '50%' }} />
                       <Typography sx={{ size: '20px' }} variant="body1">{item.content}</Typography>
                     </Stack>
                   </Card>

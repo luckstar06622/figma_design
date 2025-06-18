@@ -31,16 +31,16 @@ const cards = [
 
 export default function Academy() {
   return (
-    <Box
+    <Stack
       sx={{
-        minHeight: '100vh',
         color: '#fff',
       }}
+      alignItems="center" justifyContent={'center'}
     >
+      <Stack>
+        <Chip label="Chain Security" sx={{ bgcolor: '#23222a', color: '#bdbdbd', px: '5px', py: '20px', fontSize: '14px', mb: { md: '33px', xs: '18px' } }} />
+      </Stack>
       <Container maxWidth="md" sx={{ textAlign: 'center', mb: 6 }}>
-        <Stack alignItems="center" alignContent="center">
-          <Chip label="Chain Security" sx={{ bgcolor: '#23222a', color: '#bdbdbd', p: '18px', fontSize: '16px', mb: 2 }} />
-        </Stack>
         <Typography fontSize={{ md: "45px", xs: "32px" }} variant="h3" fontWeight="bold" gutterBottom sx={{ mb: '22px' }}>
           Chain <Box component="span" color="#bdbdbd">Security</Box> Academy
         </Typography>
@@ -52,22 +52,23 @@ export default function Academy() {
           crypto fraud cases around the world.
         </Typography>
       </Container>
-      <Container sx={{mb:'118px'}}>
+      <Container sx={{ mb: '118px' }}>
         <Grid container rowSpacing={0} spacing={2} direction={{ md: "row", sm: "column", xs: "column" }}>
           {cards.map((card, idx) => (
             <Grid size={4} key={idx} sx={{ width: { md: "32%", xs: "100%" } }}>
-              <Card variant="outlined" sx={{ bgcolor: 'transparent', height: '100%', border: 'none', boxShadow: 'none', color: 'rgba(255, 255, 255, 0.65)',
+              <Card variant="outlined" sx={{
+                bgcolor: 'transparent', height: '100%', border: 'none', boxShadow: 'none', color: 'rgba(255, 255, 255, 0.65)',
                 '&:hover': {
                   'div': {
                     opacity: 1,
                     transition: 'all 1s ease',
                   },
-                  'img':{
+                  'img': {
                     opacity: 0.5,
                     transition: 'all 1s ease',
                   },
                 }
-               }}>
+              }}>
                 <Box sx={{ position: 'relative', paddingTop: '60%' }}> {/* 50% creates a 2:1 aspect ratio */}
                   <Box
                     component="img"
@@ -80,14 +81,14 @@ export default function Academy() {
                       width: '100%',
                       height: '100%',
                       objectFit: 'cover',
-                      cursor:'pointer',
+                      cursor: 'pointer',
                     }}
                   />
                   <CardContent sx={{
                     position: 'absolute',
                     top: { md: '25%', sm: '36%', xs: '25%' },
                     left: { md: '25%', sm: '36%', xs: '25%' },
-                    opacity:0
+                    opacity: 0
                   }}>
                     <Button variant="outlined" sx={{ bgcolor: 'white', color: 'black', fontSize: '14px', fontWeight: 'bold', textTransform: 'none', borderRadius: '30px', px: '34px', py: '12px' }}>Read More</Button>
                   </CardContent>
@@ -101,6 +102,6 @@ export default function Academy() {
           ))}
         </Grid>
       </Container>
-    </Box>
+    </Stack>
   );
 }
